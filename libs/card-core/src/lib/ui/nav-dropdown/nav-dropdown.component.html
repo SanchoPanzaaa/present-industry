@@ -1,0 +1,20 @@
+<div class="container" *ngIf="navConfig">
+  <!-- Btn-->
+  <button class="btn-local" #navigation>
+    <span *ngIf="!navConfig?.onlyIcon">{{ navConfig.title }}</span>
+
+    <i class="material-icons icon">menu</i>
+    <ul class="dropdown">
+
+      <li   class="nav-item"
+            *ngFor="let item of navConfig?.items"
+            (click)="item?.action($event)">
+
+            <i class="material-icons">{{ item?.icon }}</i>
+            <a href="#">{{ item?.title }}</a>
+
+      </li>
+
+    </ul>
+  </button>
+</div>

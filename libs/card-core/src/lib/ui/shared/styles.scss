@@ -1,0 +1,9 @@
+$primary-color: #fe4e5e;
+$background-color: #fefefe;
+$paddingA: 124px;
+
+:export {
+  primaryColor: $primary-color;
+  backgroundColor: $background-color;
+  paddingA: $paddingA;
+}

@@ -1,0 +1,51 @@
+<div class="material-table" presentFocusOut (focusOut)="openCloseTable($event)">
+
+  <mat-form-field appearance="fill">
+
+    <input
+      matInput
+      [(ngModel)]="searchTerm"
+      [placeholder]="tableConfig.placeholder"
+      (ngModelChange)="onSearchTermChanged(searchTerm)"
+      autofocus/>
+
+    <mat-icon class='search-icon'
+              color="primary"
+              matPrefix>
+
+              {{ tableConfig.icon}}
+    </mat-icon>
+  </mat-form-field>
+
+  <!-- Table created to be generic in sense of what data pumps in -->
+  <ng-container >
+
+    <table  [hidden]="!hiddenTable"
+            [dataSource]="dataSource"
+            mat-table
+            matSort
+            matSortDirection="asc"
+            multiTemplateDataRows
+            (matSortChange)="sortData($event)"
+            class="mat-elevation-z8" >
+
+            <ng-container [matColumnDef]="col"
+                          *ngFor="let col of tableConfig.displayedColumns; let i = index;">
+
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header="{{ col }}">
+                          {{ col }}
+                          </th>
+                          <td mat-cell  *matCellDef="let element">{{ element[col] }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="tableConfig.displayedColumns"></tr>
+            <tr mat-row
+                (click)="execute(row)"
+                [class.demo-row-is-clicked]="clickedRow.has(row)"
+                *matRowDef="let row; columns: tableConfig.displayedColumns"  ></tr>
+    </table>
+
+</ng-container>
+<!-- So far you do not need to customize more yet -->
+
+</div>
