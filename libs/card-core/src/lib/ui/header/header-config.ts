@@ -1,4 +1,4 @@
-import { JustifyContent } from "../shared/model/justify-content.enum";
+import { JustifyContent } from "../shared/enums/justify-content.enum";
 
 export interface HeaderConfig {
   justifyContent: JustifyContent;

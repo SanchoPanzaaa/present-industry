@@ -92,6 +92,16 @@
         "jestConfig": "apps/pacient-card/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "deploy": {
+      "executor": "@angular/fire:deploy",
+      "options": {
+        "prerender": false,
+        "ssr": false,
+        "browserTarget": "pacient-card:build:production",
+        "firebaseProject": "pacient-card",
+        "firebaseHostingSite": "pacient-card"
+      }
     }
   },
   "tags": []

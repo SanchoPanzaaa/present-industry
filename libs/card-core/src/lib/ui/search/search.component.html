@@ -1,4 +1,4 @@
-<div class="material-table" presentFocusOut (focusOut)="openCloseTable($event)">
+<div class="material-table" presentFocusOut >
 
   <mat-form-field appearance="fill">
 
@@ -18,7 +18,7 @@
   </mat-form-field>
 
   <!-- Table created to be generic in sense of what data pumps in -->
-  <ng-container >
+  <ng-container>
 
     <table  [hidden]="!hiddenTable"
             [dataSource]="dataSource"

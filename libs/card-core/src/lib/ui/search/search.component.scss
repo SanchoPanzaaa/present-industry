@@ -1,3 +1,7 @@
+.material-table {
+  position: fixed;
+}
+
 .mat-mdc-row .mat-mdc-cell {
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;
@@ -10,4 +14,8 @@
 
 .mat-mdc-form-field {
   display: flex;
+}
+
+.input-firebase:focus-within .dropdown {
+
 }

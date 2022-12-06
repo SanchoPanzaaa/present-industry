@@ -1,4 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
 
+/*
+  inside flex:  justify-content moves el in the direction of main axes - horizontalli
+                align-items moves el in the direction of cross axes - vertically
+*/
+
 html, body { height: 100% }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+  font-size: 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  --bg-uno: #224B73;
+  --bg-dos: #BFECE4;
+  --bg-tres: #5B9FCA;
+  --bg-cuatro: #F3F4ED;
+  --bg-cinco: #06283D;
+
+
+  --text-primary: black;
+
+}
+
+.grid {
+  display:grid;
+
+}
+
+.animation {
+  /* you have to set up --order=number for elements */
+  animation-delay: calc(var(--order) * 100ms);
+}
+
+.resp-box {
+  width: clamp(200px, 50%, 600px);
+}
+
+.dropdown {
+  opacity: 0;
+  visibility: hidden;
+}
+
+button:focus-within .dropdown {
+  opacity: 1;
+  visibility: visible;
+}
